@@ -1,15 +1,7 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-// Create transporter - using Gmail SMTP
-const createTransporter = () => {
-  return nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL_USER, // Your Gmail address
-      pass: process.env.EMAIL_APP_PASSWORD, // Gmail App Password (not regular password)
-    },
-  });
-};
+// Initialize Resend client
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Send waitlist notification email
 export const sendWaitlistNotification = async (
@@ -20,15 +12,14 @@ export const sendWaitlistNotification = async (
   message: string | null
 ) => {
   try {
-    const transporter = createTransporter();
     const recipientEmail = process.env.NOTIFICATION_EMAIL || 'trypostulate@gmail.com';
-
+    const fromEmail = process.env.FROM_EMAIL || 'onboarding@resend.dev'; // Default Resend domain
     const typeLabel = type === 'CREATOR' ? 'Creator' : 'Company';
-    const companyInfo = company ? `\nCompany: ${company}` : '';
-    const messageInfo = message ? `\nMessage: ${message}` : '';
+    const companyInfo = company ? `<p><strong>Company:</strong> ${company}</p>` : '';
+    const messageInfo = message ? `<p><strong>Message:</strong> ${message}</p>` : '';
 
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
+    await resend.emails.send({
+      from: fromEmail,
       to: recipientEmail,
       subject: `New Waitlist Signup - ${typeLabel}`,
       html: `
@@ -36,23 +27,11 @@ export const sendWaitlistNotification = async (
         <p><strong>Type:</strong> ${typeLabel}</p>
         <p><strong>Email:</strong> ${email}</p>
         ${name ? `<p><strong>Name:</strong> ${name}</p>` : ''}
-        ${companyInfo ? `<p>${companyInfo}</p>` : ''}
-        ${messageInfo ? `<p>${messageInfo}</p>` : ''}
-        <p><strong>Signed up at:</strong> ${new Date().toLocaleString()}</p>
-      `,
-      text: `
-        New Waitlist Signup
-        
-        Type: ${typeLabel}
-        Email: ${email}
-        ${name ? `Name: ${name}` : ''}
         ${companyInfo}
         ${messageInfo}
-        Signed up at: ${new Date().toLocaleString()}
+        <p><strong>Signed up at:</strong> ${new Date().toLocaleString()}</p>
       `,
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
     console.log(`Waitlist notification email sent to ${recipientEmail}`);
   } catch (error) {
     console.error('Error sending waitlist notification email:', error);
@@ -67,11 +46,11 @@ export const sendConfirmationEmail = async (
   type: 'CREATOR' | 'COMPANY'
 ) => {
   try {
-    const transporter = createTransporter();
+    const fromEmail = process.env.FROM_EMAIL || 'onboarding@resend.dev'; // Default Resend domain
     const typeLabel = type === 'CREATOR' ? 'Creator' : 'Company';
 
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
+    await resend.emails.send({
+      from: fromEmail,
       to: email,
       subject: 'Welcome to postulate.ai Waitlist!',
       html: `
@@ -83,27 +62,10 @@ export const sendConfirmationEmail = async (
         <br>
         <p>Best regards,<br>The postulate.ai Team</p>
       `,
-      text: `
-        Thank you for joining the postulate.ai waitlist!
-        
-        Hi ${name || 'there'},
-        
-        We're excited to have you join us as a ${typeLabel.toLowerCase()} on postulate.ai!
-        
-        We'll be in touch soon with updates and early access information.
-        
-        In the meantime, feel free to reach out if you have any questions.
-        
-        Best regards,
-        The postulate.ai Team
-      `,
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
     console.log(`Confirmation email sent to ${email}`);
   } catch (error) {
     console.error('Error sending confirmation email:', error);
     // Don't throw error - we don't want email failures to break the signup
   }
 };
-
