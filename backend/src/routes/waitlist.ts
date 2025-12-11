@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { body, validationResult } from 'express-validator';
 import { prisma } from '../utils/prisma.js';
 import { errorHandler } from '../middleware/errorHandler.js';
+import { sendWaitlistNotification, sendConfirmationEmail } from '../utils/email.js';
 
 export const waitlistRoutes = Router();
 
@@ -62,6 +63,10 @@ waitlistRoutes.post(
           message: message || null,
         },
       });
+
+      // Send emails (don't await - send in background)
+      sendWaitlistNotification(email, name, type, company, message).catch(console.error);
+      sendConfirmationEmail(email, name, type).catch(console.error);
 
       res.status(201).json({
         message: 'Successfully joined waitlist',

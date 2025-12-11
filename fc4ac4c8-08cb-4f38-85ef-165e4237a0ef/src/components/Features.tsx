@@ -233,7 +233,7 @@ export function Features() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
               <motion.a
-                href="mailto:contact@postulate.ai"
+                href="mailto:trypostulate@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{
@@ -244,7 +244,7 @@ export function Features() {
                 <Mail className="w-5 h-5" style={{ 
                   stroke: '#FFD700'
                 }} />
-                <span>contact@postulate.ai</span>
+                <span>trypostulate@gmail.com</span>
               </motion.a>
               <motion.a
                 href="https://www.linkedin.com/company/postulate-ai/"
