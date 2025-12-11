@@ -15,6 +15,11 @@ export function Navbar() {
         <motion.div whileHover={{
         scale: 1.02
       }} className="flex items-center gap-2 h-full">
+          <img 
+            src="/lightbulb_logo.png" 
+            alt="Postulate Logo" 
+            className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 object-contain"
+          />
           <span className="text-base sm:text-lg md:text-xl font-bold text-gradient-animated tracking-tight flex items-center" style={{ fontFamily: "'JetBrains Mono', monospace", lineHeight: '1' }}>
             postulate.ai
           </span>
