@@ -33,7 +33,7 @@ export function Navbar() {
               const element = document.getElementById('how-it-works');
               if (element) {
                 const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition + 400; // Offset to show title significantly lower
+                const offsetPosition = elementPosition + 400;
                 window.scrollTo({
                   top: offsetPosition,
                   behavior: 'smooth'

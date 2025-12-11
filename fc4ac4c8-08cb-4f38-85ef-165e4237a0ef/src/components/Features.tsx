@@ -74,7 +74,6 @@ export function Features() {
           duration: 0.6,
           delay: index * 0.15
         }} className="group relative">
-              {/* Subtle glow */}
               <motion.div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{
             background: `linear-gradient(135deg, ${feature.glowColor}, transparent)`,
             filter: 'blur(30px)'
@@ -85,11 +84,9 @@ export function Features() {
           }} transition={{
             duration: 0.3
           }} className="relative h-full p-6 sm:p-8 md:p-12 rounded-2xl bg-gradient-to-b from-white/5 to-white/0 border border-white/10 backdrop-blur-xl hover:border-white/20 transition-all duration-300 overflow-hidden flex flex-col">
-                {/* Subtle gradient overlay */}
                 <motion.div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
 
                 <div className="relative">
-                  {/* Icon */}
                   <motion.div whileHover={{
                 rotate: 5,
                 scale: 1.05
@@ -127,7 +124,6 @@ export function Features() {
             </motion.div>)}
         </div>
 
-        {/* Process Overview */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -148,7 +144,6 @@ export function Features() {
               transition={{ duration: 0.3 }}
               className="relative p-6 sm:p-8 md:p-12 rounded-2xl bg-gradient-to-b from-white/5 to-white/0 border border-white/10 backdrop-blur-xl hover:border-white/20 transition-all duration-300 overflow-hidden"
             >
-              {/* Subtle gradient overlay */}
               <motion.div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-yellow-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
 
             <div className="relative">
@@ -212,7 +207,6 @@ export function Features() {
           </div>
         </motion.div>
 
-        {/* Bottom CTA */}
         <motion.div initial={{
         opacity: 0,
         y: 30

@@ -5,10 +5,8 @@ import { authenticate, AuthRequest, requireRole } from '../middleware/auth.js';
 
 export const ideaRoutes = Router();
 
-// All idea routes require authentication
 ideaRoutes.use(authenticate);
 
-// Validation middleware
 const validateIdea = [
   body('title').trim().isLength({ min: 3, max: 200 }),
   body('description').trim().isLength({ min: 10, max: 10000 }),
@@ -16,7 +14,6 @@ const validateIdea = [
   body('tags').optional().isString().trim().isLength({ max: 500 }),
 ];
 
-// Create idea (creators only)
 ideaRoutes.post(
   '/',
   [...validateIdea, requireRole('CREATOR', 'ADMIN')],

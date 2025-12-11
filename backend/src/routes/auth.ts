@@ -7,7 +7,6 @@ import { authenticate, AuthRequest } from '../middleware/auth.js';
 
 export const authRoutes = Router();
 
-// Register
 authRoutes.post(
   '/register',
   [
@@ -25,7 +24,6 @@ authRoutes.post(
 
       const { email, password, name, role = 'CREATOR' } = req.body;
 
-      // Check if user exists
       const existing = await prisma.user.findUnique({
         where: { email },
       });
@@ -34,10 +32,8 @@ authRoutes.post(
         return res.status(409).json({ error: 'Email already registered' });
       }
 
-      // Hash password
       const hashedPassword = await bcrypt.hash(password, 10);
 
-      // Create user
       const user = await prisma.user.create({
         data: {
           email,
@@ -47,7 +43,6 @@ authRoutes.post(
         },
       });
 
-      // Generate token
       const token = generateToken({
         userId: user.id,
         role: user.role,
@@ -70,7 +65,6 @@ authRoutes.post(
   }
 );
 
-// Login
 authRoutes.post(
   '/login',
   [
@@ -86,7 +80,6 @@ authRoutes.post(
 
       const { email, password } = req.body;
 
-      // Find user
       const user = await prisma.user.findUnique({
         where: { email },
       });
@@ -95,13 +88,11 @@ authRoutes.post(
         return res.status(401).json({ error: 'Invalid credentials' });
       }
 
-      // Verify password
       const isValid = await bcrypt.compare(password, user.password);
       if (!isValid) {
         return res.status(401).json({ error: 'Invalid credentials' });
       }
 
-      // Generate token
       const token = generateToken({
         userId: user.id,
         role: user.role,

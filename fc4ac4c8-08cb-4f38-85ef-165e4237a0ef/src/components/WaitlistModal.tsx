@@ -62,7 +62,6 @@ export function WaitlistModal({ isOpen, onClose, type }: WaitlistModalProps) {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

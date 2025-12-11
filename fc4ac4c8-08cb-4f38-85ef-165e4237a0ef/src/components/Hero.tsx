@@ -6,7 +6,7 @@ import { WaitlistModal } from './WaitlistModal';
 export function Hero() {
   const [showCreatorModal, setShowCreatorModal] = useState(false);
   const [showCompanyModal, setShowCompanyModal] = useState(false);
-  // Generate floating particles
+  
   const particles = Array.from({
     length: 15
   }, (_, i) => ({
@@ -17,12 +17,10 @@ export function Hero() {
     y: Math.random() * 100
   }));
 
-  // Generate floating geometric shapes with random movement
   const shapes = Array.from({ length: 8 }, (_, i) => {
-    const size = 60 + Math.random() * 80; // Smaller on mobile: 60-140px (will be hidden on very small screens)
+    const size = 60 + Math.random() * 80;
     const startX = Math.random() * 100;
     const startY = Math.random() * 100;
-    // More varied movement patterns - some move in arcs, some in straight lines
     const moveX1 = (Math.random() - 0.5) * 300;
     const moveY1 = (Math.random() - 0.5) * 300;
     const moveX2 = (Math.random() - 0.5) * 300;
@@ -30,7 +28,7 @@ export function Hero() {
     const duration = 20 + Math.random() * 25;
     const delay = Math.random() * 5;
     const rotation = Math.random() * 360;
-    const rotationSpeed = (Math.random() - 0.5) * 720; // Faster rotation
+    const rotationSpeed = (Math.random() - 0.5) * 720;
     
     const types = ['square', 'circle', 'triangle'];
     const type = types[Math.floor(Math.random() * types.length)];
@@ -52,7 +50,6 @@ export function Hero() {
     };
   });
   return <div className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 py-20 sm:py-32">
-      {/* Subtle animated background */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div animate={{
         scale: [1, 1.2, 1],
@@ -73,7 +70,6 @@ export function Hero() {
       }} className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-yellow-500/20 rounded-full blur-3xl" />
       </div>
 
-      {/* Floating particles */}
       {particles.map(particle => <motion.div key={particle.id} initial={{
       opacity: 0,
       x: `${particle.x}vw`,
@@ -89,7 +85,6 @@ export function Hero() {
       ease: 'easeInOut'
     }} className="absolute w-1 h-1 bg-amber-300/60 rounded-full" />)}
 
-      {/* Floating geometric shapes */}
       {shapes.map(shape => {
         const getShapeStyle = () => {
           const baseStyle: React.CSSProperties = {
@@ -107,7 +102,7 @@ export function Hero() {
             case 'triangle':
               // Triangle handled separately with SVG
               return baseStyle;
-            default: // square
+            default:
               return { ...baseStyle, borderRadius: '8px' };
           }
         };
@@ -128,7 +123,7 @@ export function Hero() {
                 x: [0, shape.moveX1, shape.moveX2, 0],
                 y: [0, shape.moveY1, shape.moveY2, 0],
                 rotate: [shape.rotation, shape.rotation + shape.rotationSpeed, shape.rotation + shape.rotationSpeed * 2, shape.rotation],
-                scale: [1, 1, 1, 1], // Maintain fixed size
+                scale: [1, 1, 1, 1],
                 opacity: [0.4, 0.6, 0.5, 0.4],
               }}
               transition={{
@@ -170,7 +165,6 @@ export function Hero() {
         );
       })}
 
-      {/* Bottom fade gradient to blend seamlessly with next section */}
       <div className="absolute bottom-0 left-0 right-0 h-[300px] sm:h-[400px] md:h-[500px] bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/90 via-[#0a0a0f]/50 via-[#0a0a0f]/20 to-transparent pointer-events-none z-[5]" />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">

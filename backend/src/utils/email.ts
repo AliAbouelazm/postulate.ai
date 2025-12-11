@@ -1,9 +1,7 @@
 import { Resend } from 'resend';
 
-// Initialize Resend client
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Send waitlist notification email
 export const sendWaitlistNotification = async (
   email: string,
   name: string | null,
@@ -13,7 +11,7 @@ export const sendWaitlistNotification = async (
 ) => {
   try {
     const recipientEmail = process.env.NOTIFICATION_EMAIL || 'trypostulate@gmail.com';
-    const fromEmail = process.env.FROM_EMAIL || 'onboarding@resend.dev'; // Default Resend domain
+    const fromEmail = process.env.FROM_EMAIL || 'onboarding@resend.dev';
     const typeLabel = type === 'CREATOR' ? 'Creator' : 'Company';
     const companyInfo = company ? `<p><strong>Company:</strong> ${company}</p>` : '';
     const messageInfo = message ? `<p><strong>Message:</strong> ${message}</p>` : '';
@@ -35,18 +33,16 @@ export const sendWaitlistNotification = async (
     console.log(`Waitlist notification email sent to ${recipientEmail}`);
   } catch (error) {
     console.error('Error sending waitlist notification email:', error);
-    // Don't throw error - we don't want email failures to break the signup
   }
 };
 
-// Send confirmation email to the user who signed up
 export const sendConfirmationEmail = async (
   email: string,
   name: string | null,
   type: 'CREATOR' | 'COMPANY'
 ) => {
   try {
-    const fromEmail = process.env.FROM_EMAIL || 'onboarding@resend.dev'; // Default Resend domain
+    const fromEmail = process.env.FROM_EMAIL || 'onboarding@resend.dev';
     const typeLabel = type === 'CREATOR' ? 'Creator' : 'Company';
 
     await resend.emails.send({
@@ -66,6 +62,5 @@ export const sendConfirmationEmail = async (
     console.log(`Confirmation email sent to ${email}`);
   } catch (error) {
     console.error('Error sending confirmation email:', error);
-    // Don't throw error - we don't want email failures to break the signup
   }
 };

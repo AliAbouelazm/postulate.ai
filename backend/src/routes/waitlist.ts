@@ -6,7 +6,6 @@ import { sendWaitlistNotification, sendConfirmationEmail } from '../utils/email.
 
 export const waitlistRoutes = Router();
 
-// Validation middleware
 const validateWaitlistEntry = [
   body('email').isEmail().normalizeEmail(),
   body('name').optional().trim().isLength({ min: 1, max: 100 }),
@@ -15,7 +14,6 @@ const validateWaitlistEntry = [
   body('message').optional().trim().isLength({ max: 1000 }),
 ];
 
-// Join waitlist
 waitlistRoutes.post(
   '/',
   validateWaitlistEntry,
@@ -28,20 +26,17 @@ waitlistRoutes.post(
 
       const { email, name, type, company, message } = req.body;
 
-      // Check if user already exists
       let user = await prisma.user.findUnique({
         where: { email },
         include: { waitlist: true },
       });
 
-      // Check if email already exists in waitlist
       if (user?.waitlist) {
         return res.status(409).json({
           error: 'Email already registered on waitlist',
         });
       }
 
-      // Create user if doesn't exist
       if (!user) {
         user = await prisma.user.create({
           data: {
@@ -53,7 +48,6 @@ waitlistRoutes.post(
         });
       }
 
-      // Create waitlist entry
       const waitlistEntry = await prisma.waitlistEntry.create({
         data: {
           userId: user!.id,
@@ -65,7 +59,6 @@ waitlistRoutes.post(
         },
       });
 
-      // Send emails (don't await - send in background)
       sendWaitlistNotification(email, name, type, company, message).catch(console.error);
       sendConfirmationEmail(email, name, type).catch(console.error);
 
@@ -84,7 +77,6 @@ waitlistRoutes.post(
   }
 );
 
-// Get waitlist stats (admin only - can be protected later)
 waitlistRoutes.get('/stats', async (req, res, next) => {
   try {
     const [creators, companies, total] = await Promise.all([
