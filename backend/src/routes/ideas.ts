@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router, Response, NextFunction } from 'express';
 import { body, validationResult, query } from 'express-validator';
 import { prisma } from '../utils/prisma.js';
 import { authenticate, AuthRequest, requireRole } from '../middleware/auth.js';
@@ -20,7 +20,7 @@ const validateIdea = [
 ideaRoutes.post(
   '/',
   [...validateIdea, requireRole('CREATOR', 'ADMIN')],
-  async (req: AuthRequest, res, next) => {
+  async (req: AuthRequest, res: Response, next: NextFunction) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -95,7 +95,7 @@ ideaRoutes.get('/my-ideas', async (req: AuthRequest, res, next) => {
 ideaRoutes.get(
   '/',
   [query('status').optional().isIn(['DRAFT', 'SUBMITTED', 'UNDER_REVIEW', 'ACCEPTED', 'REJECTED'])],
-  async (req: AuthRequest, res, next) => {
+  async (req: AuthRequest, res: Response, next: NextFunction) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -188,7 +188,7 @@ ideaRoutes.get('/:id', async (req: AuthRequest, res, next) => {
 ideaRoutes.patch(
   '/:id',
   [...validateIdea, requireRole('CREATOR', 'ADMIN')],
-  async (req: AuthRequest, res, next) => {
+  async (req: AuthRequest, res: Response, next: NextFunction) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -246,7 +246,7 @@ ideaRoutes.patch(
 ideaRoutes.post(
   '/:id/submit',
   requireRole('CREATOR', 'ADMIN'),
-  async (req: AuthRequest, res, next) => {
+  async (req: AuthRequest, res: Response, next: NextFunction) => {
     try {
       const idea = await prisma.idea.findUnique({
         where: { id: req.params.id },
@@ -302,7 +302,7 @@ ideaRoutes.post(
     body('feedback').optional().trim().isLength({ max: 5000 }),
     body('status').isIn(['interested', 'not_interested', 'needs_revision']),
   ],
-  async (req: AuthRequest, res, next) => {
+  async (req: AuthRequest, res: Response, next: NextFunction) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -364,7 +364,7 @@ ideaRoutes.post(
 ideaRoutes.delete(
   '/:id',
   requireRole('CREATOR', 'ADMIN'),
-  async (req: AuthRequest, res, next) => {
+  async (req: AuthRequest, res: Response, next: NextFunction) => {
     try {
       const idea = await prisma.idea.findUnique({
         where: { id: req.params.id },

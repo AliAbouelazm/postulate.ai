@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router, Request, Response, NextFunction } from 'express';
 import { body, validationResult } from 'express-validator';
 import { prisma } from '../utils/prisma.js';
 import { errorHandler } from '../middleware/errorHandler.js';
@@ -19,7 +19,7 @@ const validateWaitlistEntry = [
 waitlistRoutes.post(
   '/',
   validateWaitlistEntry,
-  async (req, res, next) => {
+  async (req: Request, res: Response, next: NextFunction) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -49,13 +49,14 @@ waitlistRoutes.post(
             name: name || null,
             role: type === 'COMPANY' ? 'COMPANY' : 'CREATOR',
           },
+          include: { waitlist: true },
         });
       }
 
       // Create waitlist entry
       const waitlistEntry = await prisma.waitlistEntry.create({
         data: {
-          userId: user.id,
+          userId: user!.id,
           email,
           name: name || null,
           type,

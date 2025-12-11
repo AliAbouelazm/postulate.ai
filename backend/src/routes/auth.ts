@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router, Request, Response, NextFunction } from 'express';
 import { body, validationResult } from 'express-validator';
 import bcrypt from 'bcryptjs';
 import { prisma } from '../utils/prisma.js';
@@ -16,7 +16,7 @@ authRoutes.post(
     body('name').optional().trim().isLength({ min: 1, max: 100 }),
     body('role').optional().isIn(['CREATOR', 'COMPANY']),
   ],
-  async (req, res, next) => {
+  async (req: Request, res: Response, next: NextFunction) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -77,7 +77,7 @@ authRoutes.post(
     body('email').isEmail().normalizeEmail(),
     body('password').notEmpty(),
   ],
-  async (req, res, next) => {
+  async (req: Request, res: Response, next: NextFunction) => {
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
