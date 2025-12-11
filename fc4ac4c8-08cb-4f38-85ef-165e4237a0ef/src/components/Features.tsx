@@ -247,7 +247,7 @@ export function Features() {
                 <span>contact@postulate.ai</span>
               </motion.a>
               <motion.a
-                href="https://linkedin.com/company/postulate-ai"
+                href="https://www.linkedin.com/company/postulate-ai/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{
