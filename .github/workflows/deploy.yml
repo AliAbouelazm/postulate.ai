@@ -37,6 +37,8 @@ jobs:
       
       - name: Build
         working-directory: ./fc4ac4c8-08cb-4f38-85ef-165e4237a0ef
+        env:
+          VITE_API_URL: https://postulateai-production.up.railway.app
         run: npm run build
       
       - name: Setup Pages
