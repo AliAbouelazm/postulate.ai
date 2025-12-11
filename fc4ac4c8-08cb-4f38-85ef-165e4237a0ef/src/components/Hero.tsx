@@ -251,9 +251,9 @@ export function Hero() {
             whileTap={{
               scale: 0.98
             }}
-            className="group relative px-8 sm:px-10 py-4 sm:py-5 rounded-lg bg-black border border-amber-400/30 font-semibold text-sm sm:text-base overflow-hidden w-full sm:w-auto"
+            className="group relative px-8 sm:px-10 py-4 sm:py-5 rounded-lg bg-black border border-amber-400/30 font-semibold text-sm sm:text-base overflow-hidden w-full sm:w-auto flex items-center justify-center"
           >
-            <span className="relative z-10 flex items-center gap-3 text-gradient-animated">
+            <span className="relative z-10 flex items-center gap-3 text-gradient-animated justify-center">
               Join Creator Waitlist
               <motion.div 
                 animate={{
