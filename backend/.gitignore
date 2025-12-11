@@ -1,9 +1,9 @@
 node_modules/
 dist/
 .env
-.DS_Store
 *.log
-.vscode/
-.idea/
-
-
+.DS_Store
+prisma/dev.db
+prisma/dev.db-journal
+*.db
+*.db-journal
