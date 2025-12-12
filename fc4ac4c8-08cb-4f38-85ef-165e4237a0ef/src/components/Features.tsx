@@ -12,8 +12,8 @@ const features = [{
 }, {
   icon: BuildingIcon,
   title: 'Passive Company Experience',
-  description: 'Companies remain completely passive: they don\'t post requests or define needs. They simply join, list their products, and receive targeted improvements crafted specifically for them.',
-  details: 'Companies join the platform and list their existing products. They don\'t need to post requests or define needs. Instead, they automatically receive targeted feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries crafted specifically for their products. Before any idea reaches a company, AI evaluates it for relevance, feasibility, novelty, and overall quality, filtering out weak or redundant submissions and guaranteeing a high-signal environment.',
+  description: 'Companies remain completely passive: they don\'t post requests or define needs. They simply join and receive targeted improvements crafted specifically for them.',
+  details: 'Companies join the platform. They don\'t need to post requests or define needs. Instead, they automatically receive targeted feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries crafted specifically for them. Before any idea reaches a company, AI evaluates it for relevance, feasibility, novelty, and overall quality, filtering out weak or redundant submissions and guaranteeing a high-signal environment.',
   gradient: 'from-yellow-500 to-amber-400',
   glowColor: 'rgba(255, 215, 0, 0.2)'
 }, {
@@ -167,7 +167,7 @@ export function Features() {
                 <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">3</div>
                 <div>
                   <h4 className="font-semibold mb-2 text-sm sm:text-base">Passive Company Reception</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">Companies remain completely passive: they don't post requests or define needs. They simply join the platform, list their products, and receive targeted improvements crafted specifically for them. Automatic NDAs protect both sides before any idea is shared.</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">Companies remain completely passive: they don't post requests or define needs. They simply join the platform and receive targeted improvements crafted specifically for them. Automatic NDAs protect both sides before any idea is shared.</p>
                 </div>
               </div>
               <div className="flex gap-3 sm:gap-4">

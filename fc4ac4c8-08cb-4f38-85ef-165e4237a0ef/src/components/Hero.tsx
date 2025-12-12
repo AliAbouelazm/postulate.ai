@@ -223,7 +223,7 @@ export function Hero() {
         duration: 0.8,
         delay: 0.6
       }} className="text-base sm:text-lg md:text-xl text-gray-400 mb-12 sm:mb-20 max-w-2xl mx-auto leading-relaxed font-normal px-4">
-          A curated marketplace where vetted creators submit actionable ideas to companies and get paid when adopted. Companies remain passive: they join, list products, and receive targeted improvements.
+          A curated marketplace where vetted creators submit actionable ideas to companies and get paid when adopted. Companies remain passive: they join and receive targeted improvements.
         </motion.p>
 
         <motion.div initial={{
