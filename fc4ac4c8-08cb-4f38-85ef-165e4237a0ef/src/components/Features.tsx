@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { LightbulbIcon, BuildingIcon, ShieldCheckIcon, Mail, Linkedin } from 'lucide-react';
 import { WaitlistModal } from './WaitlistModal';
+import { ScrollLightbulb } from './ScrollLightbulb';
 const features = [{
   icon: LightbulbIcon,
   title: 'AI-Powered Idea Submission',
@@ -207,6 +208,10 @@ export function Features() {
           </div>
         </motion.div>
 
+        <div className="mt-32 sm:mt-48 md:mt-64">
+          <ScrollLightbulb />
+        </div>
+
         <motion.div initial={{
         opacity: 0,
         y: 30
@@ -217,7 +222,7 @@ export function Features() {
         once: true
       }} transition={{
         duration: 0.8
-      }} className="mt-60 sm:mt-96 md:mt-[500px] pb-12 sm:pb-16 text-center" id="contact-us">
+      }} className="mt-0 pb-12 sm:pb-16 text-center" id="contact-us">
           <div className="px-4">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 tracking-tight">
               Contact Us
