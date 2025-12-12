@@ -50,6 +50,8 @@ export function Hero() {
     };
   });
   return <div className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 py-20 sm:py-32">
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent" />
       <div className="absolute inset-0 overflow-hidden">
         <motion.div animate={{
         scale: [1, 1.2, 1],
@@ -178,12 +180,9 @@ export function Hero() {
         duration: 0.8,
         delay: 0.2
       }} className="mb-12">
-          <motion.span animate={{
-          opacity: [0.4, 0.7, 0.4]
-        }} transition={{
-          duration: 3,
-          repeat: Infinity
-        }} className="text-amber-300 font-medium tracking-[0.2em] uppercase text-xs">
+          <motion.span 
+            className="text-sm font-semibold tracking-[0.2em] uppercase animate-shimmer"
+          >
             Powered by AI
           </motion.span>
         </motion.div>

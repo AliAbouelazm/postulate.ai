@@ -83,7 +83,7 @@ export function Features() {
             y: -8
           }} transition={{
             duration: 0.3
-          }} className="relative h-full p-6 sm:p-8 md:p-12 rounded-2xl bg-gradient-to-b from-white/5 to-white/0 border border-white/10 backdrop-blur-xl hover:border-white/20 transition-all duration-300 overflow-hidden flex flex-col">
+          }} className="relative h-full p-6 sm:p-8 md:p-12 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-2xl shadow-2xl hover:border-white/20 transition-all duration-300 overflow-hidden flex flex-col">
                 <motion.div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
 
                 <div className="relative">
@@ -148,30 +148,30 @@ export function Features() {
 
             <div className="relative">
               <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-center text-white tracking-tight">How the Process Works</h3>
-              <div className="space-y-4 sm:space-y-6 text-left">
-              <div className="flex gap-3 sm:gap-4">
-                <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">1</div>
+              <div className="space-y-8 sm:space-y-12 text-left relative before:absolute before:left-[11px] sm:before:left-[15px] before:top-2 before:bottom-2 before:w-[2px] before:bg-white/10 before:content-['']">
+              <div className="flex gap-4 sm:gap-8 relative">
+                <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#0a0a0f] border-2 border-amber-500 z-10 flex items-center justify-center text-amber-500 font-bold text-xs sm:text-sm">1</div>
                 <div>
                   <h4 className="font-semibold mb-2 text-sm sm:text-base">Creator Vetting & Submission</h4>
                   <p className="text-gray-400 text-xs sm:text-sm">Vetted creators submit high-quality, actionable software ideas directly to companies with existing software products. Submissions include feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries. Every submission is automatically reformatted by AI into a clean, standardized idea packet that includes the problem identified, the proposed solution, expected impact, and relevant technical considerations.</p>
                 </div>
               </div>
-              <div className="flex gap-3 sm:gap-4">
-                <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">2</div>
+              <div className="flex gap-4 sm:gap-8 relative">
+                <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#0a0a0f] border-2 border-amber-500 z-10 flex items-center justify-center text-amber-500 font-bold text-xs sm:text-sm">2</div>
                 <div>
                   <h4 className="font-semibold mb-2 text-sm sm:text-base">AI Evaluation & Filtering</h4>
                   <p className="text-gray-400 text-xs sm:text-sm">Before any idea reaches a company, AI evaluates it for relevance, feasibility, novelty, and overall quality, filtering out weak or redundant submissions and guaranteeing a high-signal environment. Only the best ideas make it through, ensuring companies receive clear and consistent insights every time.</p>
                 </div>
               </div>
-              <div className="flex gap-3 sm:gap-4">
-                <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">3</div>
+              <div className="flex gap-4 sm:gap-8 relative">
+                <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#0a0a0f] border-2 border-amber-500 z-10 flex items-center justify-center text-amber-500 font-bold text-xs sm:text-sm">3</div>
                 <div>
                   <h4 className="font-semibold mb-2 text-sm sm:text-base">Passive Company Reception</h4>
                   <p className="text-gray-400 text-xs sm:text-sm">Companies remain completely passive: they don't post requests or define needs. They simply join the platform and receive targeted software improvements crafted specifically for their products. Automatic NDAs protect both sides before any idea is shared.</p>
                 </div>
               </div>
-              <div className="flex gap-3 sm:gap-4">
-                <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">4</div>
+              <div className="flex gap-4 sm:gap-8 relative">
+                <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#0a0a0f] border-2 border-amber-500 z-10 flex items-center justify-center text-amber-500 font-bold text-xs sm:text-sm">4</div>
                 <div>
                   <h4 className="font-semibold mb-2 text-sm sm:text-base">Adoption & Compensation</h4>
                   <p className="text-gray-400 text-xs sm:text-sm">When companies adopt software ideas, creators get paid. Transparent compensation terms protect both sides. Creators earn money simply for thinking well, and companies gain fresh, external perspectives without hiring consultants or managing open suggestion channels. The marketplace continuously improves the software products the world already uses.</p>
