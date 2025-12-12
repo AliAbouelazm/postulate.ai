@@ -223,7 +223,7 @@ export function Hero() {
         duration: 0.8,
         delay: 0.6
       }} className="text-base sm:text-lg md:text-xl text-gray-400 mb-12 sm:mb-20 max-w-2xl mx-auto leading-relaxed font-normal px-4">
-          Skip the patent process. Submit ideas and get paid fast. Companies get free access to curated innovations from vetted creators.
+          A curated marketplace where vetted creators submit high-quality, actionable ideas directly to companies with existing products—and get paid when those ideas are adopted. Companies remain completely passive: they simply join, list their products, and receive targeted improvements crafted specifically for them.
         </motion.p>
 
         <motion.div initial={{
@@ -297,13 +297,13 @@ export function Hero() {
         delay: 1.2
       }} className="flex flex-wrap items-center justify-center gap-8 sm:gap-16 text-xs sm:text-sm px-4">
           {[{
-          label: 'Secure NDA Protection',
+          label: 'AI-Powered Evaluation',
           color: 'bg-amber-400'
         }, {
-          label: 'AI-Powered Matching',
+          label: 'Automatic NDAs',
           color: 'bg-yellow-400'
         }, {
-          label: 'Fair Compensation',
+          label: 'Standardized Packets',
           color: 'bg-amber-300'
         }].map((item, index) => <motion.div key={item.label} initial={{
           opacity: 0,

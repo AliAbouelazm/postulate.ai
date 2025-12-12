@@ -4,23 +4,23 @@ import { LightbulbIcon, BuildingIcon, ShieldCheckIcon, Mail, Linkedin } from 'lu
 import { WaitlistModal } from './WaitlistModal';
 const features = [{
   icon: LightbulbIcon,
-  title: 'Submit Feature & Product Ideas',
-  description: 'Skip the patent process. Submit your innovations and get paid fast with no lengthy wait times or patent fees.',
-  details: 'Creators apply to join our platform and go through a vetting process to ensure quality and credibility. Once approved, submit your feature or product ideas and get them in front of companies immediately. No patent applications, no waiting periods, no legal fees. Just a streamlined path from idea to payment. All submissions are protected by automatic NDAs before any company can view them. Free to join, zero upfront costs.',
+  title: 'AI-Powered Idea Submission',
+  description: 'Vetted creators submit high-quality, actionable ideas directly to companies. Every submission is automatically reformatted by AI into standardized idea packets.',
+  details: 'Creators apply to join our curated marketplace and go through a vetting process to ensure quality and credibility. Once approved, submit feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries. AI automatically reformats each submission into a clean, standardized idea packet that includes the problem identified, the proposed solution, expected impact, and relevant technical considerations—ensuring companies receive clear and consistent insights every time.',
   gradient: 'from-amber-500 to-yellow-500',
   glowColor: 'rgba(245, 158, 11, 0.2)'
 }, {
   icon: BuildingIcon,
-  title: 'Company Review & Connection',
-  description: 'Access curated, high-quality innovations from vetted creators. Browse, review, and connect, all free.',
-  details: 'Companies get free access to a curated selection of feature and product ideas from trusted, high-caliber creators who have been vetted through our application process. Browse innovations that match your needs, review detailed submissions, and connect directly with creators when you find something compelling. No subscription fees, no browsing costs. Just free access to a pipeline of credible, innovative ideas.',
+  title: 'Passive Company Experience',
+  description: 'Companies remain completely passive: they don\'t post requests or define needs. They simply join, list their products, and receive targeted improvements crafted specifically for them.',
+  details: 'Companies join the platform and list their existing products. They don\'t need to post requests or define needs. Instead, they automatically receive targeted feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries crafted specifically for their products. Before any idea reaches a company, AI evaluates it for relevance, feasibility, novelty, and overall quality—filtering out weak or redundant submissions and guaranteeing a high-signal environment.',
   gradient: 'from-yellow-500 to-amber-400',
   glowColor: 'rgba(255, 215, 0, 0.2)'
 }, {
   icon: ShieldCheckIcon,
-  title: 'Negotiate, Sign & Implement',
-  description: 'Direct negotiations, electronic contracts, immediate implementation. Fast, transparent, and efficient.',
-  details: 'When a company expresses interest, our platform enables direct connection for transparent price negotiations. Once terms are agreed upon, contracts are signed electronically through our secure system. After execution, companies can implement the idea immediately. The entire process is designed for speed and efficiency with no middlemen, no delays, just a clean path from interest to implementation with creators getting fast compensation.',
+  title: 'Protected & Compensated',
+  description: 'Automatic NDAs and transparent compensation terms protect both sides. Creators earn money when ideas are adopted, and companies gain fresh perspectives without hiring consultants.',
+  details: 'Automatic NDAs protect both creators and companies before any idea is shared. Transparent compensation terms ensure fair payment when ideas are adopted. Creators earn money simply for thinking well, and companies gain fresh, external perspectives without hiring consultants or managing open suggestion channels. With AI structuring, scoring, and elevating the best ideas, postulate.ai transforms traditional feature requests and bug bounties into a unified, intelligent, compensated idea marketplace.',
   gradient: 'from-amber-400 to-yellow-400',
   glowColor: 'rgba(218, 165, 32, 0.2)'
 }];
@@ -57,7 +57,7 @@ export function Features() {
             </span>
           </motion.h2>
           <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto font-normal px-4">
-            A free platform connecting creators and companies. Creators skip the patent process and get paid fast. Companies get free access to curated, high-quality innovations from vetted creators. Streamlined, efficient, zero fees to join.
+            Vetted creators submit actionable ideas directly to companies with existing products. Every submission is automatically reformatted by AI into standardized idea packets and evaluated for relevance, feasibility, novelty, and quality—ensuring companies receive only high-signal insights.
           </p>
         </motion.div>
 
@@ -152,29 +152,29 @@ export function Features() {
               <div className="flex gap-3 sm:gap-4">
                 <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">1</div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-sm sm:text-base">Creator Application & Idea Submission</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">Creators apply to join the platform and go through a vetting process to ensure quality and credibility. Once approved, submit your feature or product ideas and get them in front of companies immediately. Skip the patent process with no applications, no waiting periods, and no legal fees. Just submit and connect. Free to join.</p>
+                  <h4 className="font-semibold mb-2 text-sm sm:text-base">Creator Vetting & Submission</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">Vetted creators submit high-quality, actionable ideas directly to companies with existing products. Submissions include feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries. Every submission is automatically reformatted by AI into a clean, standardized idea packet that includes the problem identified, the proposed solution, expected impact, and relevant technical considerations.</p>
                 </div>
               </div>
               <div className="flex gap-3 sm:gap-4">
                 <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">2</div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-sm sm:text-base">Company Review</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">Companies get free access to browse curated, high-quality innovations from vetted creators. Review submissions that match your innovation needs. All ideas are protected by NDAs before companies can view details. No subscription fees, no costs to browse. Just free access to a pipeline of credible ideas.</p>
+                  <h4 className="font-semibold mb-2 text-sm sm:text-base">AI Evaluation & Filtering</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">Before any idea reaches a company, AI evaluates it for relevance, feasibility, novelty, and overall quality—filtering out weak or redundant submissions and guaranteeing a high-signal environment. Only the best ideas make it through, ensuring companies receive clear and consistent insights every time.</p>
                 </div>
               </div>
               <div className="flex gap-3 sm:gap-4">
                 <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">3</div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-sm sm:text-base">Connect & Negotiate</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">When a company is interested in an idea, our platform enables direct connection with the creator. Negotiate prices directly with no middlemen and no delays. Creators get fast compensation without the lengthy patent process. Both parties agree on terms transparently before moving forward.</p>
+                  <h4 className="font-semibold mb-2 text-sm sm:text-base">Passive Company Reception</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">Companies remain completely passive: they don't post requests or define needs. They simply join the platform, list their products, and receive targeted improvements crafted specifically for them. Automatic NDAs protect both sides before any idea is shared.</p>
                 </div>
               </div>
               <div className="flex gap-3 sm:gap-4">
                 <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">4</div>
                 <div>
-                  <h4 className="font-semibold mb-2 text-sm sm:text-base">Sign Contracts & Implement</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">Once terms are agreed upon, contracts are signed electronically through our secure platform. After execution, companies can implement the idea immediately. Creators receive fast compensation, and companies get innovative features or products ready to implement. Clean, efficient, fast.</p>
+                  <h4 className="font-semibold mb-2 text-sm sm:text-base">Adoption & Compensation</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">When companies adopt ideas, creators get paid. Transparent compensation terms protect both sides. Creators earn money simply for thinking well, and companies gain fresh, external perspectives without hiring consultants or managing open suggestion channels. The marketplace continuously improves the products the world already uses.</p>
                 </div>
               </div>
             </div>
@@ -183,21 +183,21 @@ export function Features() {
                 <div className="p-4 sm:p-6 rounded-xl bg-white/5 border border-white/10">
                   <h4 className="font-semibold mb-3 text-amber-300 text-sm sm:text-base">For Creators</h4>
                   <ul className="space-y-2 text-xs sm:text-sm text-gray-400">
-                    <li>• Fast payment by skipping the patent process</li>
-                    <li>• No waiting periods or legal fees</li>
-                    <li>• Solve problems and monetize creativity</li>
-                    <li>• Free to join with zero upfront costs</li>
-                    <li>• Direct connection with companies</li>
+                    <li>• Get paid when your ideas are adopted</li>
+                    <li>• Submit actionable ideas directly to companies</li>
+                    <li>• AI structures and elevates your best ideas</li>
+                    <li>• Automatic NDAs protect your submissions</li>
+                    <li>• Earn money simply for thinking well</li>
                   </ul>
                 </div>
                 <div className="p-4 sm:p-6 rounded-xl bg-white/5 border border-white/10">
                   <h4 className="font-semibold mb-3 text-amber-300 text-sm sm:text-base">For Companies</h4>
                   <ul className="space-y-2 text-xs sm:text-sm text-gray-400">
-                    <li>• Free access to curated innovations</li>
-                    <li>• Ideas from trusted, vetted creators</li>
-                    <li>• High-caliber, credible sources</li>
-                    <li>• Free to join with no subscription fees</li>
-                    <li>• Direct connection with creators</li>
+                    <li>• Remain completely passive—no posting needed</li>
+                    <li>• Receive targeted improvements for your products</li>
+                    <li>• AI-evaluated, high-signal ideas only</li>
+                    <li>• Fresh perspectives without hiring consultants</li>
+                    <li>• Standardized idea packets for easy review</li>
                   </ul>
                 </div>
               </div>
