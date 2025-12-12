@@ -5,15 +5,15 @@ import { WaitlistModal } from './WaitlistModal';
 const features = [{
   icon: LightbulbIcon,
   title: 'AI-Powered Idea Submission',
-  description: 'Vetted creators submit high-quality, actionable ideas directly to companies. Every submission is automatically reformatted by AI into standardized idea packets.',
-  details: 'Creators apply to join our curated marketplace and go through a vetting process to ensure quality and credibility. Once approved, submit feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries. AI automatically reformats each submission into a clean, standardized idea packet that includes the problem identified, the proposed solution, expected impact, and relevant technical considerations, ensuring companies receive clear and consistent insights every time.',
+  description: 'Vetted creators submit high-quality, actionable software ideas directly to companies. Every submission is automatically reformatted by AI into standardized idea packets.',
+  details: 'Creators apply to join our curated marketplace and go through a vetting process to ensure quality and credibility. Once approved, submit software feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries for existing software products. AI automatically reformats each submission into a clean, standardized idea packet that includes the problem identified, the proposed solution, expected impact, and relevant technical considerations, ensuring companies receive clear and consistent insights every time.',
   gradient: 'from-amber-500 to-yellow-500',
   glowColor: 'rgba(245, 158, 11, 0.2)'
 }, {
   icon: BuildingIcon,
   title: 'Passive Company Experience',
-  description: 'Companies remain completely passive: they don\'t post requests or define needs. They simply join and receive targeted improvements crafted specifically for them.',
-  details: 'Companies join the platform. They don\'t need to post requests or define needs. Instead, they automatically receive targeted feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries crafted specifically for them. Before any idea reaches a company, AI evaluates it for relevance, feasibility, novelty, and overall quality, filtering out weak or redundant submissions and guaranteeing a high-signal environment.',
+  description: 'Companies remain completely passive: they don\'t post requests or define needs. They simply join and receive targeted software improvements crafted specifically for their products.',
+  details: 'Companies join the platform. They don\'t need to post requests or define needs. Instead, they automatically receive targeted software feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries crafted specifically for their software products. Before any idea reaches a company, AI evaluates it for relevance, feasibility, novelty, and overall quality, filtering out weak or redundant submissions and guaranteeing a high-signal environment.',
   gradient: 'from-yellow-500 to-amber-400',
   glowColor: 'rgba(255, 215, 0, 0.2)'
 }, {
@@ -57,7 +57,7 @@ export function Features() {
             </span>
           </motion.h2>
           <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto font-normal px-4">
-            Vetted creators submit actionable ideas directly to companies with existing products. Every submission is automatically reformatted by AI into standardized idea packets and evaluated for relevance, feasibility, novelty, and quality, ensuring companies receive only high-signal insights.
+            Vetted creators submit actionable software ideas directly to companies with existing software products. Every submission is automatically reformatted by AI into standardized idea packets and evaluated for relevance, feasibility, novelty, and quality, ensuring companies receive only high-signal insights.
           </p>
         </motion.div>
 
@@ -153,7 +153,7 @@ export function Features() {
                 <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">1</div>
                 <div>
                   <h4 className="font-semibold mb-2 text-sm sm:text-base">Creator Vetting & Submission</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">Vetted creators submit high-quality, actionable ideas directly to companies with existing products. Submissions include feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries. Every submission is automatically reformatted by AI into a clean, standardized idea packet that includes the problem identified, the proposed solution, expected impact, and relevant technical considerations.</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">Vetted creators submit high-quality, actionable software ideas directly to companies with existing software products. Submissions include feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries. Every submission is automatically reformatted by AI into a clean, standardized idea packet that includes the problem identified, the proposed solution, expected impact, and relevant technical considerations.</p>
                 </div>
               </div>
               <div className="flex gap-3 sm:gap-4">
@@ -167,14 +167,14 @@ export function Features() {
                 <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">3</div>
                 <div>
                   <h4 className="font-semibold mb-2 text-sm sm:text-base">Passive Company Reception</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">Companies remain completely passive: they don't post requests or define needs. They simply join the platform and receive targeted improvements crafted specifically for them. Automatic NDAs protect both sides before any idea is shared.</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">Companies remain completely passive: they don't post requests or define needs. They simply join the platform and receive targeted software improvements crafted specifically for their products. Automatic NDAs protect both sides before any idea is shared.</p>
                 </div>
               </div>
               <div className="flex gap-3 sm:gap-4">
                 <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">4</div>
                 <div>
                   <h4 className="font-semibold mb-2 text-sm sm:text-base">Adoption & Compensation</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">When companies adopt ideas, creators get paid. Transparent compensation terms protect both sides. Creators earn money simply for thinking well, and companies gain fresh, external perspectives without hiring consultants or managing open suggestion channels. The marketplace continuously improves the products the world already uses.</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">When companies adopt software ideas, creators get paid. Transparent compensation terms protect both sides. Creators earn money simply for thinking well, and companies gain fresh, external perspectives without hiring consultants or managing open suggestion channels. The marketplace continuously improves the software products the world already uses.</p>
                 </div>
               </div>
             </div>
@@ -184,7 +184,7 @@ export function Features() {
                   <h4 className="font-semibold mb-3 text-amber-300 text-sm sm:text-base">For Creators</h4>
                   <ul className="space-y-2 text-xs sm:text-sm text-gray-400">
                     <li>• Get paid when your ideas are adopted</li>
-                    <li>• Submit actionable ideas directly to companies</li>
+                    <li>• Submit actionable software ideas directly to companies</li>
                     <li>• AI structures and elevates your best ideas</li>
                     <li>• Automatic NDAs protect your submissions</li>
                     <li>• Earn money simply for thinking well</li>
@@ -194,7 +194,7 @@ export function Features() {
                   <h4 className="font-semibold mb-3 text-amber-300 text-sm sm:text-base">For Companies</h4>
                   <ul className="space-y-2 text-xs sm:text-sm text-gray-400">
                     <li>• Remain completely passive, no posting needed</li>
-                    <li>• Receive targeted improvements for your products</li>
+                    <li>• Receive targeted improvements for your software products</li>
                     <li>• AI-evaluated, high-signal ideas only</li>
                     <li>• Fresh perspectives without hiring consultants</li>
                     <li>• Standardized idea packets for easy review</li>
