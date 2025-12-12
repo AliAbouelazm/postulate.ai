@@ -6,14 +6,14 @@ const features = [{
   icon: LightbulbIcon,
   title: 'AI-Powered Idea Submission',
   description: 'Vetted creators submit high-quality, actionable ideas directly to companies. Every submission is automatically reformatted by AI into standardized idea packets.',
-  details: 'Creators apply to join our curated marketplace and go through a vetting process to ensure quality and credibility. Once approved, submit feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries. AI automatically reformats each submission into a clean, standardized idea packet that includes the problem identified, the proposed solution, expected impact, and relevant technical considerations—ensuring companies receive clear and consistent insights every time.',
+  details: 'Creators apply to join our curated marketplace and go through a vetting process to ensure quality and credibility. Once approved, submit feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries. AI automatically reformats each submission into a clean, standardized idea packet that includes the problem identified, the proposed solution, expected impact, and relevant technical considerations, ensuring companies receive clear and consistent insights every time.',
   gradient: 'from-amber-500 to-yellow-500',
   glowColor: 'rgba(245, 158, 11, 0.2)'
 }, {
   icon: BuildingIcon,
   title: 'Passive Company Experience',
   description: 'Companies remain completely passive: they don\'t post requests or define needs. They simply join, list their products, and receive targeted improvements crafted specifically for them.',
-  details: 'Companies join the platform and list their existing products. They don\'t need to post requests or define needs. Instead, they automatically receive targeted feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries crafted specifically for their products. Before any idea reaches a company, AI evaluates it for relevance, feasibility, novelty, and overall quality—filtering out weak or redundant submissions and guaranteeing a high-signal environment.',
+  details: 'Companies join the platform and list their existing products. They don\'t need to post requests or define needs. Instead, they automatically receive targeted feature improvements, UX enhancements, workflow optimizations, technical insights, and bug discoveries crafted specifically for their products. Before any idea reaches a company, AI evaluates it for relevance, feasibility, novelty, and overall quality, filtering out weak or redundant submissions and guaranteeing a high-signal environment.',
   gradient: 'from-yellow-500 to-amber-400',
   glowColor: 'rgba(255, 215, 0, 0.2)'
 }, {
@@ -57,7 +57,7 @@ export function Features() {
             </span>
           </motion.h2>
           <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto font-normal px-4">
-            Vetted creators submit actionable ideas directly to companies with existing products. Every submission is automatically reformatted by AI into standardized idea packets and evaluated for relevance, feasibility, novelty, and quality—ensuring companies receive only high-signal insights.
+            Vetted creators submit actionable ideas directly to companies with existing products. Every submission is automatically reformatted by AI into standardized idea packets and evaluated for relevance, feasibility, novelty, and quality, ensuring companies receive only high-signal insights.
           </p>
         </motion.div>
 
@@ -160,7 +160,7 @@ export function Features() {
                 <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white font-bold text-xs sm:text-sm">2</div>
                 <div>
                   <h4 className="font-semibold mb-2 text-sm sm:text-base">AI Evaluation & Filtering</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">Before any idea reaches a company, AI evaluates it for relevance, feasibility, novelty, and overall quality—filtering out weak or redundant submissions and guaranteeing a high-signal environment. Only the best ideas make it through, ensuring companies receive clear and consistent insights every time.</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">Before any idea reaches a company, AI evaluates it for relevance, feasibility, novelty, and overall quality, filtering out weak or redundant submissions and guaranteeing a high-signal environment. Only the best ideas make it through, ensuring companies receive clear and consistent insights every time.</p>
                 </div>
               </div>
               <div className="flex gap-3 sm:gap-4">
@@ -193,7 +193,7 @@ export function Features() {
                 <div className="p-4 sm:p-6 rounded-xl bg-white/5 border border-white/10">
                   <h4 className="font-semibold mb-3 text-amber-300 text-sm sm:text-base">For Companies</h4>
                   <ul className="space-y-2 text-xs sm:text-sm text-gray-400">
-                    <li>• Remain completely passive—no posting needed</li>
+                    <li>• Remain completely passive, no posting needed</li>
                     <li>• Receive targeted improvements for your products</li>
                     <li>• AI-evaluated, high-signal ideas only</li>
                     <li>• Fresh perspectives without hiring consultants</li>
